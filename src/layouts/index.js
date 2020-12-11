@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from './index.module.css'
+import styles from './index.module.scss'
 import { Footer } from '../components/footer/footer'
 import { Header } from '../components/header/header'
 
@@ -9,6 +9,7 @@ export const MainLayout = (children) => {
       <Head>
         <title>Life Values</title>
         <link rel="icon" href="/favicon.ico" />
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
       </Head>
       <Header />
         <main>{ children.children }</main>

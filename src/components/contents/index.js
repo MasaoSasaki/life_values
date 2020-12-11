@@ -1,9 +1,9 @@
 import { Introduction } from './introduction/index';
-// import Step2 from './Step2';
-// import Step3 from './Step3';
-// import Step4 from './Step4';
+import { Step1 } from './step1/index';
+import { Step2 } from './step2/index';
+import { Step3 } from './step3/index';
 import { Result } from './result/index';
-// import Question from './Question';
+import Question from '../question';
 import React, { useState } from 'react'
 
 export const Contents = () => {
@@ -11,19 +11,19 @@ export const Contents = () => {
   let [stepNumber, changeNumber] = useState(1)
   switch (stepNumber) {
     case 2:
-      contents = <Step2 onClickNextStep={ () => this.stepUp } onClickPrevStep={ () => this.setState({ stepNumber: 1 }) } question={ Question } />
+      contents = <Step1 onClickNextStep={ () => { changeNumber(stepNumber = 3) } } onClickRestart={ () => { changeNumber(stepNumber = 1 ) } } question = { Question } />
       break
     case 3:
-      contents = <Step3 onClickNextStep={ () => this.stepUp } />
+      contents = <Step2 onClickNextStep={ () => { changeNumber(stepNumber = 4) } } onClickRestart={ () => { changeNumber(stepNumber = 1 ) } } />
       break
     case 4:
-      contents = <Step4 onClickNextStep={ () => this.stepUp } />
+      contents = <Step3 onClickNextStep={ () => { changeNumber(stepNumber = 5) } } onClickRestart={ () => { changeNumber(stepNumber = 1 ) } } />
       break
     case 5:
-      contents = <Result onClick={ () => { changeNumber(stepNumber = 1) } }/>
+      contents = <Result onClickRestart={ () => { changeNumber(stepNumber = 1) } }/>
       break
     default:
-      contents = <Introduction onClick={ () => { changeNumber(stepNumber = 5) } } />
+      contents = <Introduction onClickNextStep={ () => { changeNumber(stepNumber = 2) } } question={ Question }/>
       break
   }
 

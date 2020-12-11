@@ -23,21 +23,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.footer img {
-  margin-left: 0.5rem;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+  img {
+    margin-left: 0.5rem;
+  }
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .title a:hover,
@@ -50,6 +44,11 @@
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+
+  a {
+    color: #0070f3;
+    text-decoration: none;
+  }
 }
 
 .title,

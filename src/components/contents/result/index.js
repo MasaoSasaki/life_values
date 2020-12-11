@@ -5,7 +5,7 @@ export const Result = (props) => {
         <p>
           あなたが最も大切としている価値観は以下になりました！<br />
         </p>
-        <button onClick={ props.onClick } className="btn">最初から</button>
+        <button onClick={ props.onClickRestart } className="btn">最初から</button>
       </div>
     </div>
   );

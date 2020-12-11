@@ -3,14 +3,10 @@ export const Introduction = (props) => {
     <div className="Introduction">
       <div className="contents">
         <h3>遊び方</h3>
-        <p>これから、合計８０問の設問が一つずつ表示されます。<br />
-          それぞれ３択の中からあなたにとっての重要度を、できるだけ<strong>直感</strong>で選んでください。</p>
-        <p>
-          ☆・・・とても重要<br />
-          ○・・・まあまあ重要<br />
-          x・・・重要ではない<br />
+        <p>これから、合計{ props.question.length }問の設問が一つずつ表示されます。<br />
+          それぞれの質問に対し、３択の中から"あなたにとっての重要度"を、できるだけ<strong>直感</strong>で選んでください。
         </p>
-        <button className="start-btn" onClick={ props.onClick }>開始する</button>
+        <button className="start-btn" onClick={ props.onClickNextStep }>開始する</button>
       </div>
     </div>
   );
