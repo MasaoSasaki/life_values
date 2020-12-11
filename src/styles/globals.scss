@@ -17,4 +17,86 @@ a {
 
 footer {
   line-height: 100px;
+
+  small {
+    text-decoration: underline;
+  }
+}
+
+.App {
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  header, main, footer {
+    padding: 1rem;
+  }
+
+  /* ヘッダー */
+
+  /* メインコンテンツ */
+  .contents {
+    margin: 0 auto;
+    border: 5px solid gray;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .btn:hover {
+    cursor: pointer;
+  }
+
+  .contents p {
+    margin-bottom: 10px 0 20px;
+  }
+
+  .introduction h3 {
+    margin-top: 0;
+  }
+
+  .step2 h2 {
+    margin: 50px 0 5px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .choice {
+    margin: 30px auto 30px;
+  }
+
+  .box {
+    width: 55px;
+    height: 55px;
+    border: 5px solid rgba(0, 150, 255, 0.5);
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .box:hover {
+    cursor: pointer;
+    background-color: rgba(0, 150, 255, 0.4);
+  }
+
+  i {
+    margin-top: 3px;
+  }
+
+  .btn_list {
+    margin: 50px 0 20px;
+  }
+
+  /* フッター */
 }
