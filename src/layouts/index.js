@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import styles from './index.module.scss'
 import { Footer } from '../components/footer/footer'
+import { Header } from '../components/header/header'
 
 export const MainLayout = () => {
   return(
@@ -9,7 +10,7 @@ export const MainLayout = () => {
         <title>Life Values</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Header />
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
