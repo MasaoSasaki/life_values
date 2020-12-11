@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from './index.module.css'
+import styles from './index.module.scss'
 import { Footer } from '../components/footer/footer'
 
 export const MainLayout = () => {
