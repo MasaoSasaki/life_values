@@ -1,28 +1,23 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import { SelectBox } from '../../selectbox/index';
 
 export const Step1 = (props) => {
-  let [hightImportanceCount, countUpHightImportance] = useState(0);
-  let [middleImportanceCount, countUpMiddleImportance] = useState(0);
-  let [lowImportanceCount, countUpLowImportance] = useState(0);
-  let count = hightImportanceCount + middleImportanceCount + lowImportanceCount;
-
   return (
     <div className="Step1">
       <div className="contents">
         <div className="question">
-          <p>直感で選んでください。（{ count + 1 }/{ props.question.length }）</p>
+          <p>直感で選んでください。（{ props.count + 1 }/{ props.question.length }）</p>
           <small>※ページを更新すると最初からになります。</small>
-          <div><h4>{ props.question[count].title }</h4></div>
-          <div><p>{ props.question[count].body }</p></div>
+          <div><h4>{ props.question[props.count].title }</h4></div>
+          <div><p>{ props.question[props.count].body }</p></div>
         </div>
         <div className="choice flex">
           {/* とても重要 */}
-          <SelectBox icon="far fa-star" onClick={ () => countUpHightImportance(hightImportanceCount + 1) } />
+          <SelectBox icon="far fa-star" onClick={ props.countUpHightImportance } />
           {/* まあまあ重要 */}
-          <SelectBox icon="far fa-circle" onClick={ () => countUpMiddleImportance(middleImportanceCount + 1) } />
+          <SelectBox icon="far fa-circle" onClick={ props.countUpMiddleImportance } />
           {/* 重要じゃない */}
-          <SelectBox icon="fas fa-times" onClick={ () => countUpLowImportance(lowImportanceCount + 1) } />
+          <SelectBox icon="fas fa-times" onClick={ props.countUpLowImportance } />
         </div>
         <p>
           ☆・・・とても重要<br />
