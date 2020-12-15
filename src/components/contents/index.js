@@ -4,30 +4,39 @@ import { Step2 } from './step2/index';
 import { Step3 } from './step3/index';
 import { Result } from './result/index';
 import Question from '../question';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 
 export const Contents = () => {
-  let [hightImportanceCount, countUpHightImportance] = useState(0);
-  let [middleImportanceCount, countUpMiddleImportance] = useState(0);
-  let [lowImportanceCount, countUpLowImportance] = useState(0);
-  let count = hightImportanceCount + middleImportanceCount + lowImportanceCount;
+  let [step1Array, set80Items] = useState([]);
+
+  useEffect( () => {
+    if (step1Array.length == 8) {
+      console.log(true)
+    } else {
+      console.log(false)
+    }
+  })
+
   let contents;
-  let [stepNumber, changeNumber] = useState(1)
+  let [stepNumber, setStep] = useState(1)
   switch (stepNumber) {
     case 2:
-      contents = <Step1 onClickNextStep={ () => { changeNumber(stepNumber = 3) } } onClickRestart={ () => { changeNumber(stepNumber = 1 ) } } question = { Question } count = { count } countUpHightImportance={ () => countUpHightImportance(hightImportanceCount + 1) } countUpMiddleImportance={ () => countUpMiddleImportance(middleImportanceCount + 1) } countUpLowImportance={ () => countUpLowImportance(lowImportanceCount + 1) }/>
+      console.log(step1Array)
+      if (step1Array.length == 8) { setStep(stepNumber = 3) }
+      contents = <Step1 onClickImportance1={ () => set80Items([...step1Array, 1])} onClickImportance2={ () => set80Items([...step1Array, 2])} onClickImportance3={ () => set80Items([...step1Array, 3])} count={ step1Array.length }/>
+      console.log('step1', step1Array)
       break
     case 3:
-      contents = <Step2 onClickNextStep={ () => { changeNumber(stepNumber = 4) } } onClickRestart={ () => { changeNumber(stepNumber = 1 ) } } count = { count }/>
+      contents = <Step2 onClickNextStep={ () => { setStep(stepNumber = 4) } } onClickRestart={ () => { setStep(stepNumber = 1 ) } } count = { step1Array.length }/>
       break
     case 4:
-      contents = <Step3 onClickNextStep={ () => { changeNumber(stepNumber = 5) } } onClickRestart={ () => { changeNumber(stepNumber = 1 ) } } />
+      contents = <Step3 onClickNextStep={ () => { setStep(stepNumber = 5) } } onClickRestart={ () => { setStep(stepNumber = 1 ) } } />
       break
     case 5:
-      contents = <Result onClickRestart={ () => { changeNumber(stepNumber = 1) } }/>
+      contents = <Result onClickRestart={ () => { setStep(stepNumber = 1) } }/>
       break
     default:
-      contents = <Introduction onClickNextStep={ () => { changeNumber(stepNumber = 2) } } question={ Question }/>
+      contents = <Introduction onClickNextStep={ () => { setStep(stepNumber = 2) } } question={ Question }/>
       break
   }
 
