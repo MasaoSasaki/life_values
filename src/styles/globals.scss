@@ -4,6 +4,33 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-image: url("../../public/background-image.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: right;
+
+  header {
+
+    h2 {
+      padding: 10px;
+      background: rgba($color: #ffffff, $alpha: 0.7);
+      border-radius: 20px;
+      box-shadow: 0 0 10px 10px rgba($color: #fff, $alpha: 0.7);
+    }
+  }
+
+  main {
+    width: 100%;
+  }
+
+  footer {
+    line-height: 100px;
+
+    small {
+      text-decoration: underline;
+    }
+  }
 }
 
 a {
@@ -13,14 +40,6 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-footer {
-  line-height: 100px;
-
-  small {
-    text-decoration: underline;
-  }
 }
 
 .App {
@@ -39,11 +58,13 @@ footer {
 
   /* メインコンテンツ */
   .contents {
+    min-height: 300px;
     margin: 0 auto;
-    border: 5px solid gray;
-    border-radius: 10px;
-    padding: 30px;
+    padding-top: 20px;
     text-align: center;
+    background: rgba($color: #ffffff, $alpha: 0.7);
+    border-radius: 20px;
+    box-shadow: 0 0 10px 10px rgba($color: #fff, $alpha: 0.7);
   }
 
   .btn:hover {

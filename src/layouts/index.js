@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from './index.module.scss'
-import { Footer } from '../components/footer/footer'
-import { Header } from '../components/header/header'
+import { Footer } from '../components/footer/index'
+import { Header } from '../components/header/index'
 
 export const MainLayout = (children) => {
   return(

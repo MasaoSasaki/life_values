@@ -10,24 +10,24 @@ export const Contents = () => {
   let [step1Array, set80Items] = useState([]);
 
   useEffect( () => {
-    if (step1Array.length == 8) {
-      console.log(true)
-    } else {
-      console.log(false)
-    }
+    // if (step1Array.length === Question.length) {
+    //   console.log(true)
+    // } else {
+    //   console.log(false)
+    // }
   })
 
   let contents;
   let [stepNumber, setStep] = useState(1)
   switch (stepNumber) {
     case 2:
-      console.log(step1Array)
-      if (step1Array.length == 8) { setStep(stepNumber = 3) }
+      if (step1Array.length === Question.length) { setStep(stepNumber = 3) }
       contents = <Step1 onClickImportance1={ () => set80Items([...step1Array, 1])} onClickImportance2={ () => set80Items([...step1Array, 2])} onClickImportance3={ () => set80Items([...step1Array, 3])} count={ step1Array.length }/>
-      console.log('step1', step1Array)
       break
     case 3:
-      contents = <Step2 onClickNextStep={ () => { setStep(stepNumber = 4) } } onClickRestart={ () => { setStep(stepNumber = 1 ) } } count = { step1Array.length }/>
+      contents = (
+        <Step2 step1Array = { step1Array }/>
+      )
       break
     case 4:
       contents = <Step3 onClickNextStep={ () => { setStep(stepNumber = 5) } } onClickRestart={ () => { setStep(stepNumber = 1 ) } } />
